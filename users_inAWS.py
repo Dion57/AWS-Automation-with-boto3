@@ -5,12 +5,12 @@ iam_console_resource = aws_management_console.resource('iam')
 iam_console_client = aws_management_console.client('iam')
 
 # IAM Users list using resource object:
-for each_user in iam_console.users.all():
+for each_user in iam_console_resource.users.all():
     print(each_user.name)
 
 # IAM  Users list using client object:
-for each in iam_console_client.list_users()['users']:
-    print(each['userName'])
+for each in iam_console_client.list_users()['Users']:
+    print(each['UserName'])
 
 """
     The session is the AWS management console. It saves configurations and allows us create services, clients and resources.
