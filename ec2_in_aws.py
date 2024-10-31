@@ -4,6 +4,9 @@ import boto3
 aws_management_console = boto3.session.Session(profile_name="default")
 # open ec2 console
 ec2_console = aws_management_console.client(service_name='ec2')
-# To list instances
+# To list instances using for loops
 list_instances = ec2_console.describe_instances()['Reservations']
-print(list_instances)
+for each_instance in list_instances:
+    for value in each_instance['Instances']:
+        print(value['InstanceId'])
+
