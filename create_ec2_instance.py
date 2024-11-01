@@ -11,3 +11,8 @@ create_instance = ec2_console.run_instances(
     MaxCount=1,
     MinCount=1,
 )
+
+# To stop Ec2 Instance:
+stop_ec2_instance = ec2_console.stop_instance(
+    InstanceIds=['ami-##############']
+)
